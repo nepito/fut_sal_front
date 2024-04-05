@@ -1,61 +1,49 @@
-import altair as alt
 import pandas as pd
-import plotly.express as px
 import streamlit as st
-import streamlit_nies as sn
+import json
 
+f = open('tests/data/fixtures.json')
+data = json.load(f)
 
-larga = pd.read_csv("static/larga_player.csv")
+fixtures = data["response"]
+position = pd.read_csv("tests/data/tabla_general.csv")
 data = pd.read_csv("static/played_minutes.csv")
 # ----------------- game start --------
 radar_player = "J. Musiala"
 
-fig = sn.make_bar_plot_player(larga, radar_player)
+matches, table, stats, player = st.tabs(["Partidos", "Tabla", "Estadísticas", "Jugadores"])
 
-league, team, player = st.tabs(["League", "Team", "Player"])
-
-with league:
-    st.subheader("Gráficas de desempeño")
+with matches:
+    st.subheader("Partidos")
     """
-    Estas gráficas tienen un conjunto de métricas seleccionadas a partir de técnicas de inteligencia artificial.
-    Cada barra representa la fuerza relativa del jugador en cada una de las métricas.
-    La distancia que existe de la barra al centro indica el percentil comparado con la base de datos completa.
-
-    La descripción completa la encontrarás en la entrada [Gráfica de desempeño de jugadores](https://www.nies.futbol/2023/07/grafica-de-desempeno-de-jugadores.html).
     """
-    st.plotly_chart(fig)
-
-with team:
-    st.subheader("Gráficas de consistencia")
+    col1, col2, col3 = st.columns([1, 3, 1])
+    with col2:
+        st.write(fixtures[0]["teams"]["home"]["name"])
+        st.write(fixtures[0]["teams"]["away"]["name"])
+    with col3:
+        st.write(fixtures[0]["goals"]["home"])
+        st.write(fixtures[0]["goals"]["away"])
     """
-    En la figura de abajo mostramos un mapa de calor.
-    En los renglones podemos ver a los jugadores del equipo (incluyendo a los sustitutos).
-    Las columnas corresponden a los partidos disputados.
-    Así, el color de cada cuadro representa los minutos disputados en un partido por cada jugador.
-
-    La descripción completa la encontrarás en la entrada [Consistencia en las alineaciones](https://www.nies.futbol/2023/08/consistencia-en-las-alineaciones-la.html).
+    ---
     """
-    teams = ["Cimarrones", "Cancún", "Mineros de Zacatecas"]
-    colours = {"Cimarrones": "oranges", "Cancún": "blues", "Mineros de Zacatecas": "reds"}
-    team = st.selectbox("Selecciona un equipo:", teams)
-    color = colours[team]
-    played_minutes = data[data.team == team]
+    col1, col2, col3 = st.columns([1, 3, 1])
+    with col2:
+        st.write(fixtures[1]["teams"]["home"]["name"])
+        st.write(fixtures[1]["teams"]["away"]["name"])
+    with col3:
+        st.write(fixtures[1]["goals"]["home"])
+        st.write(fixtures[1]["goals"]["away"])
 
-    # Crear el gráfico de Altair
-    hm_consistent = sn.make_heat_map_of_sonsistent(data, team, color)
-    st.altair_chart(hm_consistent)
+with table:
+    st.subheader("Tabla general")
+    """
+    """
+    st.dataframe(position, hide_index = True)
 
 with player:
     st.subheader("Gráficas de desempeño")
     """
-    Estas gráficas tienen un conjunto de métricas seleccionadas a partir de técnicas de inteligencia artificial.
-    Cada barra representa la fuerza relativa del jugador en cada una de las métricas.
-    La distancia que existe de la barra al centro indica el percentil comparado con la base de datos completa.
-
-    La descripción completa la encontrarás en la entrada [Gráfica de desempeño de jugadores](https://www.nies.futbol/2023/07/grafica-de-desempeno-de-jugadores.html).
     """
-    fig = sn.add_nies_logo(fig)
-    st.plotly_chart(fig)
-
 
 st.markdown("Made with 💖 by [nies.futbol](https://nies.futbol)")
