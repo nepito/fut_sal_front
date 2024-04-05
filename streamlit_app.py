@@ -10,7 +10,7 @@ position = pd.read_csv("tests/data/tabla_general.csv")
 data = pd.read_csv("static/played_minutes.csv")
 # ----------------- game start --------
 def write_a_match(index_of_match):
-    _, col2, col3 = st.columns([1, 3, 1])
+    col2, col3 = st.columns([2, 1])
     with col2:
         st.write(fixtures[index_of_match]["teams"]["home"]["name"])
         st.write(fixtures[index_of_match]["teams"]["away"]["name"])
