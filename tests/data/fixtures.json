@@ -181,20 +181,20 @@
 			"teams": {
 				"home": {
 					"id": 35,
-					"name": "Bournemouth",
+					"name": "Los Konse",
 					"logo": "https://media-4.api-sports.io/football/teams/35.png",
-					"winner": true
+					"winner": false
 				},
 				"away": {
 					"id": 66,
-					"name": "Aston Villa",
+					"name": "Kingstone",
 					"logo": "https://media-4.api-sports.io/football/teams/66.png",
-					"winner": false
+					"winner": true
 				}
 			},
 			"goals": {
 				"home": 2,
-				"away": 0
+				"away": 5
 			},
 			"score": {
 				"halftime": {
@@ -249,20 +249,20 @@
 			"teams": {
 				"home": {
 					"id": 63,
-					"name": "Leeds",
+					"name": "Kahomas",
 					"logo": "https://media-4.api-sports.io/football/teams/63.png",
 					"winner": true
 				},
 				"away": {
 					"id": 39,
-					"name": "Wolves",
+					"name": "Tumbados",
 					"logo": "https://media-4.api-sports.io/football/teams/39.png",
 					"winner": false
 				}
 			},
 			"goals": {
 				"home": 2,
-				"away": 1
+				"away": 0
 			},
 			"score": {
 				"halftime": {
