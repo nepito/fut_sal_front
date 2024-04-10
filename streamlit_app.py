@@ -7,6 +7,7 @@ data = json.load(f)
 
 fixtures = data["response"]
 position = pd.read_csv("tests/data/tabla_general.csv")
+stats_players = pd.read_csv("tests/data/estadistica.csv")
 data = pd.read_csv("static/played_minutes.csv")
 # ----------------- game start --------
 def write_a_match(index_of_match):
@@ -42,9 +43,10 @@ with table:
     """
     st.dataframe(position, hide_index = True)
 
-with player:
-    st.subheader("Gráficas de desempeño")
+with stats:
+    st.subheader("Estadística")
     """
     """
+    st.dataframe(stats_players, hide_index = True)
 
 st.markdown("Made with 💖 by [nies.futbol](https://nies.futbol)")
