@@ -39,7 +39,7 @@ def write_a_match(index_of_match):
     st.write(away)
 # ---------------------------------------
 
-matches, table, stats, player = st.tabs(["Partidos", "Tabla", "Estadísticas", "Jugadores"])
+matches, table, stats = st.tabs(["Partidos", "Tabla", "Estadísticas"])
 
 with matches:
     st.subheader("Partidos")
