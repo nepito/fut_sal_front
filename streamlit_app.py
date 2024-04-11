@@ -18,25 +18,28 @@ st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
 
 # --- LOAD CSS, PDF & PROFIL PIC ---
 profile_pic = Image.open(profile_pic)
-col1, _= st.columns(2, gap="small")
+col1, _ = st.columns(2, gap="small")
 with col1:
     st.image(profile_pic, width=230)
 
 
-
-f = open('tests/data/fixtures.json')
+f = open("tests/data/fixtures.json")
 data = json.load(f)
 
 fixtures = data["response"]
 position = pd.read_csv("tests/data/tabla_general.csv")
 stats_players = pd.read_csv("tests/data/estadistica.csv")
 data = pd.read_csv("static/played_minutes.csv")
+
+
 # ----------------- game start --------
 def write_a_match(index_of_match):
     home = f"{fixtures[index_of_match]['teams']['home']['name']}:  {fixtures[index_of_match]['goals']['home']}"
     away = f"{fixtures[index_of_match]['teams']['away']['name']}:  {fixtures[index_of_match]['goals']['away']}"
     st.write(home)
     st.write(away)
+
+
 # ---------------------------------------
 
 matches, table, stats = st.tabs(["Partidos", "Tabla", "Estadísticas"])
@@ -53,12 +56,12 @@ with table:
     st.subheader("Tabla general")
     """
     """
-    st.dataframe(position, hide_index = True)
+    st.dataframe(position, hide_index=True)
 
 with stats:
     st.subheader("Estadísticas")
     """
     """
-    st.dataframe(stats_players, hide_index = True)
+    st.dataframe(stats_players, hide_index=True)
 
 st.markdown("Made with 💖 by [nies.futbol](https://nies.futbol)")
