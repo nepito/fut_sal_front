@@ -63,7 +63,7 @@ with stats:
     """
     """
     st.dataframe(stats_players, hide_index=True)
-    html_string = '<iframe width="600" height="450" src="https://lookerstudio.google.com/embed/reporting/d3f6cc9b-b30b-4732-b240-1a4241349bae/page/7ETwD" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>'
+    html_string = '<iframe width="450" height="600" src="https://lookerstudio.google.com/embed/reporting/d3f6cc9b-b30b-4732-b240-1a4241349bae/page/7ETwD" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>'
     st.markdown(html_string, unsafe_allow_html=True)
 
 st.markdown("Made with 💖 by [nies.futbol](https://nies.futbol)")
