@@ -1,6 +1,28 @@
+import json
+from pathlib import Path
+from PIL import Image
 import pandas as pd
 import streamlit as st
-import json
+
+
+# --- PATH SETTINGS ---
+current_dir = Path(__file__).parent if "__file__" in locals() else Path.cwd()
+profile_pic = current_dir / "static" / "fut_sal.png"
+
+# --- GENERAL SETTINGS ---
+PAGE_TITLE = "Fut Sal | NIES"
+PAGE_ICON = "⚽"
+
+st.set_page_config(page_title=PAGE_TITLE, page_icon=PAGE_ICON)
+
+
+# --- LOAD CSS, PDF & PROFIL PIC ---
+profile_pic = Image.open(profile_pic)
+col1, _= st.columns(2, gap="small")
+with col1:
+    st.image(profile_pic, width=230)
+
+
 
 f = open('tests/data/fixtures.json')
 data = json.load(f)
@@ -34,7 +56,7 @@ with table:
     st.dataframe(position, hide_index = True)
 
 with stats:
-    st.subheader("Estadística")
+    st.subheader("Estadísticas")
     """
     """
     st.dataframe(stats_players, hide_index = True)
