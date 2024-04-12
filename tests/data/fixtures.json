@@ -46,7 +46,7 @@
 				"home": {
 					"id": 1,
 					"name": "Alex FC",
-					"logo": "https://media-4.api-sports.io/football/teams/52.png",
+					"logo": "https://raw.githubusercontent.com/nepito/fut_sal_front/develop/static/alex_fc.png",
 					"winner": false
 				},
 				"away": {
@@ -114,7 +114,7 @@
 				"home": {
 					"id": 36,
 					"name": "Eco Pasto",
-					"logo": "https://media-4.api-sports.io/football/teams/36.png",
+					"logo": "https://raw.githubusercontent.com/nepito/fut_sal_front/develop/static/eco_pasto.png",
 					"winner": false
 				},
 				"away": {
@@ -188,7 +188,7 @@
 				"away": {
 					"id": 66,
 					"name": "Kingstone",
-					"logo": "https://media-4.api-sports.io/football/teams/66.png",
+					"logo": "https://raw.githubusercontent.com/nepito/fut_sal_front/develop/static/kingstone.png",
 					"winner": true
 				}
 			},
@@ -318,13 +318,13 @@
 				"home": {
 					"id": 46,
 					"name": "Alex FC",
-					"logo": "https://media-4.api-sports.io/football/teams/46.png",
+					"logo": "https://raw.githubusercontent.com/nepito/fut_sal_front/develop/static/alex_fc.png",
 					"winner": false
 				},
 				"away": {
 					"id": 55,
 					"name": "Eco Pasto",
-					"logo": "https://media-4.api-sports.io/football/teams/55.png",
+					"logo": "https://raw.githubusercontent.com/nepito/fut_sal_front/develop/static/eco_pasto.png",
 					"winner": true
 				}
 			},
@@ -454,7 +454,7 @@
 				"home": {
 					"id": 47,
 					"name": "Kingstone",
-					"logo": "https://media-4.api-sports.io/football/teams/47.png",
+					"logo": "https://raw.githubusercontent.com/nepito/fut_sal_front/develop/static/kingstone.png",
 					"winner": true
 				},
 				"away": {
