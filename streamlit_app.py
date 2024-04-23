@@ -66,4 +66,6 @@ with stats:
     html_string = '<iframe width="300" height="800" src="https://lookerstudio.google.com/embed/reporting/d3f6cc9b-b30b-4732-b240-1a4241349bae/page/7ETwD" frameborder="0" style="border:0" allowfullscreen sandbox="allow-storage-access-by-user-activation allow-scripts allow-same-origin allow-popups allow-popups-to-escape-sandbox"></iframe>'
     st.markdown(html_string, unsafe_allow_html=True)
 
+st.markdown("---")
+st.markdown("[Facebook](https://www.facebook.com/profile.php?id=61557613142658)")
 st.markdown("Made with 💖 by [nies.futbol](https://nies.futbol)")
